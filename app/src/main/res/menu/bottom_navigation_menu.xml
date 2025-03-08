@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/createFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_create"
+        android:title="@string/create"/>
+    <item
+        android:id="@+id/myWorkFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_my_work"
+        android:title="@string/my_work"/>
+</menu>
