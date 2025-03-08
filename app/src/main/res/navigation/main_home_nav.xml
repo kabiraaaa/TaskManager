@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_home_nav.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="com.ddt.app.task_manager.ui.fragments.CreateFragment"
+        android:label="fragment_create"
+        tools:layout="@layout/fragment_create" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ddt.app.task_manager.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/myWorkFragment"
+        android:name="com.ddt.app.task_manager.ui.fragments.MyWorkFragment"
+        android:label="fragment_my_work"
+        tools:layout="@layout/fragment_my_work" />
+</navigation>
