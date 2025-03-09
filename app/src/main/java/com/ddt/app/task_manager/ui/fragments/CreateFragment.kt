@@ -12,6 +12,7 @@ import androidx.work.WorkManager
 import com.ddt.app.task_manager.R
 import com.ddt.app.task_manager.data.local.TaskDatabase
 import com.ddt.app.task_manager.data.models.Task
+import com.ddt.app.task_manager.data.repository.RepositoryProvider
 import com.ddt.app.task_manager.data.repository.TaskRepository
 import com.ddt.app.task_manager.databinding.FragmentCreateBinding
 import com.ddt.app.task_manager.domain.NotificationWorker
@@ -27,17 +28,16 @@ import java.util.concurrent.TimeUnit
 
 class CreateFragment : Fragment(R.layout.fragment_create) {
 
-    private var _binding: FragmentCreateBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentCreateBinding
+
     private var selectedDateInMillis: Long? = null
     private lateinit var taskViewModel: TaskViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentCreateBinding.bind(view)
+        binding = FragmentCreateBinding.bind(view)
 
-        val repository = TaskRepository(TaskDatabase.getDatabase(requireContext()).taskDao())
-        val viewModelFactory = TaskViewModelFactory(repository)
+        val viewModelFactory = TaskViewModelFactory(RepositoryProvider.repository)
         taskViewModel = ViewModelProvider(this, viewModelFactory)[TaskViewModel::class.java]
 
         initClickListeners()
@@ -139,11 +139,6 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
         } else {
             "No priority selected"
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun scheduleDueDateNotification(context: Context, dueDateMillis: Long) {

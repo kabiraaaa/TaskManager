@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ddt.app.task_manager.R
 import com.ddt.app.task_manager.data.local.TaskDatabase
 import com.ddt.app.task_manager.data.models.Task
+import com.ddt.app.task_manager.data.repository.RepositoryProvider
 import com.ddt.app.task_manager.data.repository.TaskRepository
 import com.ddt.app.task_manager.databinding.FragmentHomeBinding
 import com.ddt.app.task_manager.ui.adapters.TaskAdapter
@@ -36,10 +37,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
 
-        val taskDao = TaskDatabase.getDatabase(requireContext()).taskDao()
-        val repository = TaskRepository(taskDao)
-        taskViewModel =
-            ViewModelProvider(this, TaskViewModelFactory(repository))[TaskViewModel::class.java]
+        val viewModelFactory = TaskViewModelFactory(RepositoryProvider.repository)
+        taskViewModel = ViewModelProvider(this, viewModelFactory)[TaskViewModel::class.java]
 
         setupRecyclerView()
         setupSorting()
