@@ -11,8 +11,8 @@
         android:icon="@drawable/ic_create"
         android:title="@string/create"/>
     <item
-        android:id="@+id/myWorkFragment"
+        android:id="@+id/settingsFragment"
         android:enabled="true"
-        android:icon="@drawable/ic_my_work"
-        android:title="@string/my_work"/>
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"/>
 </menu>
