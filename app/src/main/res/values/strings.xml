@@ -1,8 +1,33 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Task Manager</string>
     <string name="home">Home</string>
     <string name="create">Create</string>
     <string name="my_work">My Work</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="task_name">Task Name(Required)</string>
+    <string name="task_description">Task Description(optional)</string>
+    <string name="add_task">Add Task</string>
+    <string name="priority">Priority</string>
+    <string name="due_date">Due Date</string>
+    <string name="set_date">Set Date</string>
+    <string name="three_dot_menu_task_edit_menu">three dot menu task edit menu</string>
+    <string name="no_tasks_available">No tasks available</string>
+    <string name="all">All</string>
+    <string name="completed">Completed</string>
+    <string name="pending">Pending</string>
+    <string name="mark_completed">Mark Completed</string>
+    <string name="task_title">Task Title</string>
+    <string name="change_priority">Change priority</string>
+    <string name="change_due_date">Change due date</string>
+    <string name="task_status">Task Status</string>
+    <string name="task_due_date">Task Due Date</string>
+    <string name="task_priority">Task Priority</string>
+    <string name="delete">Delete</string>
+    <string name="fab_content_desc">fab create task</string>
+    <string name="change_status">Change Status</string>
+    <string name="change_date">Change Date</string>
 </resources>
