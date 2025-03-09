@@ -72,7 +72,7 @@ class CreateFragment : Fragment(R.layout.fragment_create) {
                 title = taskName,
                 description = taskDescription,
                 priority = taskPriority,
-                dueDate = selectedDateInMillis!! // Store due date in task
+                dueDate = selectedDateInMillis!!
             )
 
             taskViewModel.addTask(task)

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -57,5 +58,9 @@ dependencies {
 
     // Room Database
     implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
+
+    //Work Manager
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
 }
